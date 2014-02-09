@@ -14,4 +14,4 @@ result = (y,x) ->
 
 
 
-console.log result
+result
