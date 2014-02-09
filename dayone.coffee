@@ -2,7 +2,7 @@
 
 #  Function
 result = (y,x) ->
-  if x is 0 then return "1"      # base case
+  if x is 0 then return 1      # base case
   else return y*result(y,x-1)    # recursive case
 
 
