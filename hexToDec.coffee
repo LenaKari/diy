@@ -1,32 +1,30 @@
-
 hexToDec = (input) ->
 
-	#base case
+        #base case
 
-if input.length is 1
-	if input[0] is '1'
-		return 1
-	else	
-		return 0
+        newValue = input.toLowerCase()
+
+        if newValue.length is 1
+                if newValue.charCodeAt() >= 'a'.charCodeAt()
+                        return newValue.charCodeAt() - 'a'.charCodeAt() + 10
+                else
+                        return newValue.charCodeAt() - '0'.charCodeAt()
 
 
-	#recursive case
+        #recursive case
 
-else
+        else
+                lastDigit = newValue.slice(newValue.length-1, newValue.length)
+                valueLastDigit = hexToDec(lastDigit)
 
-	newValue = input.toLowerCase()
-	lastDigit = newValue.slice(newValue.length-1, newValue.length)
+                head = newValue.slice(0, newValue.length-1)
+                valueHead = hexToDec(head)
 
-	if lastDigit.charCodeAt() > 96
-		return lastDigit.charCodeAt()-87
-	else
-		return lastDigit.charCodeAt()-48
 
-	head = newValue.slice(0, newValue.length-1)
-	valueHead = hexToDec(head)
-     
-
-	return  16 * valueHead + valueLastDigit
+                return  16 * valueHead + valueLastDigit
 
 
 console.log hexToDec '1'
+console.log hexToDec '51'
+console.log hexToDec '123'
+console.log hexToDec '2AF3'
