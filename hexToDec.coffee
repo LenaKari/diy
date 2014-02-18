@@ -4,10 +4,7 @@ hexToDec = (input) ->
 	#base case
 	newValue = input.toLowerCase()
 	
-	if newValue.length > 16 
-		throw "input contains too many characters"
-
-	else if newValue.length is 1
+	if newValue.length is 1
 		if '0'.charCodeAt() <= newValue.charCodeAt() <= '9'.charCodeAt()  # for the value of characters 0-9			
 			return newValue.charCodeAt() - '0'.charCodeAt() 
 
@@ -31,8 +28,7 @@ hexToDec = (input) ->
 
 
 
-#console.log hexToDec '12345678901234567'
-#console.log hexToDec '2AR3'
+console.log hexToDec '2AR3'
 #console.log hexToDec '1'
 #console.log hexToDec '51'
 #console.log hexToDec '123'
