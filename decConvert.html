@@ -28,73 +28,75 @@
 	<script>
 
 
-	// Declaring variables collected in the form
-
+		// Declaring variables collected in the form
 		var inputText = document.getElementById('inputText');
 	        var convertTypeHex = document.getElementById('selectHex');
 		var convertTypeBin = document.getElementById('selectBin');
 		
 
 
-        // Converting input
+        	// Determining input type
 		var convertType = function(input) {
 			if (input.length === 0) {
 				alert("Enter a value to convert.");
 			} else {
 				if (convertTypeBin.checked) {
-					// Converting binary to decimal
-					alert("Bin is working");
-//					var binToDec = function(input) {
-//						if (input.length === 1) {
-//							if (input[0] === '1') {
-//								alert(1);	
-//							} else {
-//								alert(0);
-//							}
-// 
-//						} else {
-//							alert("Input is more than one character");
-//							var lastDigit = input.slice(input.length - 1, input.length);
-//							var valueLastDigit = binToDec(lastDigit);
-//							var head = input.slice(0, input.length - 1);
-//							var valueHead = binToDec(head);
-//							return ((2 * valueHead) + valueLastDigit);
-//						}
-//					}
-//					binToDec(input);
+					alert(binToDec(input));
 				} else if (convertTypeHex.checked) {
-					alert("Hex is working") ;
-//				}
-				// Script for converting hexadecimal to decimal 
-//				var hexToDec = function(input, position) {
-//					var _ref, _ref1;
-//				if (position == null) {
-//					position = 0;
-//				}
-//				if (input.length === 1) {
-//					var newValue = input.toLowerCase();
-//					if (('0'.charCodeAt() <= (_ref = newValue.charCodeAt()) && _ref <= '9'.charCodeAt())) {
-//						return newValue.charCodeAt() - '0'.charCodeAt();
-//					} else if (('a'.charCodeAt() <= (_ref1 = newValue.charCodeAt()) && _ref1 <= 'f'.charCodeAt())) {
-//						return newValue.charCodeAt() - 'a'.charCodeAt() + 10;
-//					} else {
-//						var myError = new Error("Input contains an invalid character - " + input + ". Position (from right): " + position);
-//						myError.invalidCharacter = input;
-//						myError.position = position;
-//						throw myError;
-//				}else {
-//					var lastDigit = input.slice(input.length - 1, input.length);
-//					var valueLastDigit = hexToDec(lastDigit, position);
-//					var head = input.slice(0, input.length - 1);
-//					var valueHead = hexToDec(head, position + 1);
-//					return 16 * valueHead + valueLastDigit;
-//				}
+					alert(hexToDec(input));
 				} else {
 					alert("Is your initial value binary or hexadecimal?");
 				}	
 			}
 		}
 
+
+
+		// Converting binary to decimal
+		var binToDec = function(input) {
+			if (input.length === 1) {
+				if (input[0] === '1') {
+					return(1);       
+				} else {
+					return(0);
+				}
+			} else {
+				return("This part isn't working");
+//				var lastDigit = input.slice(input.length - 1, input.length);
+//				var valueLastDigit = binToDec(lastDigit);
+//				var head = input.slice(0, input.length - 1);
+//				var valueHead = binToDec(head);
+//				alert((2 * valueHead) + valueLastDigit);
+			}
+		}
+
+
+		// Script for converting hexadecimal to decimal 
+		var hexToDec = function(input, position) {
+			if (position == null) {
+				position = 0;
+//			}
+//			if (input.length === 1) {
+//				var newValue = input.toLowerCase();
+//				return("This part isn't working");
+//				if ('0'.charCodeAt() <= newValue.charCodeAt() <= '9'.charCodeAt()) {
+//					return newValue.charCodeAt() - '0'.charCodeAt();
+//				} else if ('a'.charCodeAt() <= newValue.charCodeAt() <= 'f'.charCodeAt()) {
+//					return newValue.charCodeAt() - 'a'.charCodeAt() + 10;
+//				} else {
+//					var myError = new Error("Input contains an invalid character - " + input + ". Position (from right): " + position);
+//					myError.invalidCharacter = input;
+//					myError.position = position;
+//					throw myError;
+//			} else {
+//				return("This part isn't working");
+//				var lastDigit = input.slice(input.length - 1, input.length);
+//				var valueLastDigit = hexToDec(lastDigit, position);
+//				var head = input.slice(0, input.length - 1);
+//				var valueHead = hexToDec(head, position + 1);
+//				return 16 * valueHead + valueLastDigit;
+			}
+		}
 
 
 
