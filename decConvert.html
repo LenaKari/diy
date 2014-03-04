@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<title>Convert Binary and Hexadecimal to Decimal</title>
+</head>
+
+<body>
+
+
+	<div>
+		<h3>Convert binary and hexadecimal values to decimal.</h3>
+
+		<form>
+			Value to convert: <input type="text" id="inputText"><br><br>
+
+			<h3>Convert from:</h3>
+			
+			Hexadecimal <input type="radio" name="conversionSelector" id="selectHex" value="hex">
+			<br>
+			Binary <input type="radio" name="conversionSelector" id="selectBin" value="bin">
+
+
+		</form>
+	
+	<script>
+
+
+	// Declaring variables collected in the form
+
+		var inputText = document.getElementById('inputText');
+	        var convertTypeHex = document.getElementById('selectHex');
+		var convertTypeBin = document.getElementById('selectBin');
+		
+
+
+        // Converting input
+		var convertType = function(input) {
+			if (input.length === 0) {
+				alert("Enter a value to convert.");
+			} else {
+				if (convertTypeBin.checked) {
+					// Converting binary to decimal
+					alert("Bin is working");
+//					var binToDec = function(input) {
+//						if (input.length === 1) {
+//							if (input[0] === '1') {
+//								alert(1);	
+//							} else {
+//								alert(0);
+//							}
+// 
+//						} else {
+//							alert("Input is more than one character");
+//							var lastDigit = input.slice(input.length - 1, input.length);
+//							var valueLastDigit = binToDec(lastDigit);
+//							var head = input.slice(0, input.length - 1);
+//							var valueHead = binToDec(head);
+//							return ((2 * valueHead) + valueLastDigit);
+//						}
+//					}
+//					binToDec(input);
+				} else if (convertTypeHex.checked) {
+					alert("Hex is working") ;
+//				}
+				// Script for converting hexadecimal to decimal 
+//				var hexToDec = function(input, position) {
+//					var _ref, _ref1;
+//				if (position == null) {
+//					position = 0;
+//				}
+//				if (input.length === 1) {
+//					var newValue = input.toLowerCase();
+//					if (('0'.charCodeAt() <= (_ref = newValue.charCodeAt()) && _ref <= '9'.charCodeAt())) {
+//						return newValue.charCodeAt() - '0'.charCodeAt();
+//					} else if (('a'.charCodeAt() <= (_ref1 = newValue.charCodeAt()) && _ref1 <= 'f'.charCodeAt())) {
+//						return newValue.charCodeAt() - 'a'.charCodeAt() + 10;
+//					} else {
+//						var myError = new Error("Input contains an invalid character - " + input + ". Position (from right): " + position);
+//						myError.invalidCharacter = input;
+//						myError.position = position;
+//						throw myError;
+//				}else {
+//					var lastDigit = input.slice(input.length - 1, input.length);
+//					var valueLastDigit = hexToDec(lastDigit, position);
+//					var head = input.slice(0, input.length - 1);
+//					var valueHead = hexToDec(head, position + 1);
+//					return 16 * valueHead + valueLastDigit;
+//				}
+				} else {
+					alert("Is your initial value binary or hexadecimal?");
+				}	
+			}
+		}
+
+
+
+
+	</script>
+
+
+
+		<br>
+
+		<button onclick="convertType(inputText.value)" class="button">
+			<strong>Convert!</strong>
+		</button>
+
+
+		<div class="result">
+		
+		</div> 
+
+		
+	</div>
+
+
+
+</body>
+
+
+</html>
