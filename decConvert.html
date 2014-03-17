@@ -82,13 +82,14 @@
 				var newValue = input.toLowerCase();
 				if ('0'.charCodeAt() <= newValue.charCodeAt() && newValue.charCodeAt() <= '9'.charCodeAt()) {
 					return newValue.charCodeAt() - '0'.charCodeAt();
-				} else if ('a'.charCodeAt() <= newValue.charCodeAt() <= 'f'.charCodeAt()) {
+				} else if ('a'.charCodeAt() <= newValue.charCodeAt() && newValue.charCodeAt() <= 'f'.charCodeAt()) {
 					return newValue.charCodeAt() - 'a'.charCodeAt() + 10;
 				} else {
 					var myError = new Error("Input contains an invalid character - " + input + ". Position (from right): " + position);
 					myError.invalidCharacter = input;
 					myError.position = position;
 					throw myError;
+				}
 			} else {
 				var lastDigit = input.slice(input.length - 1, input.length);
 				var valueLastDigit = hexToDec(lastDigit, position);
