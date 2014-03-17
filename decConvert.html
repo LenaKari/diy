@@ -74,26 +74,24 @@
 		var hexToDec = function(input, position) {
 			if (position == null) {
 				position = 0;
-//			}
-//			if (input.length === 1) {
-//				var newValue = input.toLowerCase();
-//				return("This part isn't working");
-//				if ('0'.charCodeAt() <= newValue.charCodeAt() <= '9'.charCodeAt()) {
-//					return newValue.charCodeAt() - '0'.charCodeAt();
-//				} else if ('a'.charCodeAt() <= newValue.charCodeAt() <= 'f'.charCodeAt()) {
-//					return newValue.charCodeAt() - 'a'.charCodeAt() + 10;
-//				} else {
-//					var myError = new Error("Input contains an invalid character - " + input + ". Position (from right): " + position);
-//					myError.invalidCharacter = input;
-//					myError.position = position;
-//					throw myError;
-//			} else {
-//				return("This part isn't working");
-//				var lastDigit = input.slice(input.length - 1, input.length);
-//				var valueLastDigit = hexToDec(lastDigit, position);
-//				var head = input.slice(0, input.length - 1);
-//				var valueHead = hexToDec(head, position + 1);
-//				return 16 * valueHead + valueLastDigit;
+			}
+			if (input.length === 1) {
+				var newValue = input.toLowerCase();
+				if ('0'.charCodeAt() <= newValue.charCodeAt() && newValue.charCodeAt() <= '9'.charCodeAt()) {
+					return newValue.charCodeAt() - '0'.charCodeAt();
+				} else if ('a'.charCodeAt() <= newValue.charCodeAt() <= 'f'.charCodeAt()) {
+					return newValue.charCodeAt() - 'a'.charCodeAt() + 10;
+				} else {
+					var myError = new Error("Input contains an invalid character - " + input + ". Position (from right): " + position);
+					myError.invalidCharacter = input;
+					myError.position = position;
+					throw myError;
+			} else {
+				var lastDigit = input.slice(input.length - 1, input.length);
+				var valueLastDigit = hexToDec(lastDigit, position);
+				var head = input.slice(0, input.length - 1);
+				var valueHead = hexToDec(head, position + 1);
+				return 16 * valueHead + valueLastDigit;
 			}
 		}
 
