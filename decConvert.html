@@ -57,9 +57,12 @@
 			if (input.length === 1) {
 				if (input[0] === '1') {
 					return(1);       
-				} else {
-					return(0);
-				}
+                                } else if (input[0] === '0') {
+                                        return(0);
+                                } else {
+                                        var binError = new Error("Input contains an invalid character.");
+                                        return(binError);
+                                }
 			} else {
 				var lastDigit = input.slice(input.length - 1, input.length);
 				var valueLastDigit = binToDec(lastDigit);
@@ -107,7 +110,7 @@
 			<strong>Convert!</strong>
 		</button>
 
-
+		<br><br>
 		<div id="resultDiv"></div> 
 
 		
