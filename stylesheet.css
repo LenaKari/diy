@@ -30,9 +30,9 @@ div {
 
 #resultDiv {
 	background-color: #ffffff ;
-	width: 100px ;
-	height: 20px ;
-	line-height: 20px ;
+	width: 375px ;
+	height: 50px ;
+	line-height: 25px ;
 	border: 2px solid black;
 	text-align: center ;
 	vertical-align: middle;
