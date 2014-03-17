@@ -41,9 +41,9 @@
 				alert("Enter a value to convert.");
 			} else {
 				if (convertTypeBin.checked) {
-					alert(binToDec(input));
+					document.getElementById("resultDiv").innerHTML = binToDec(input);
 				} else if (convertTypeHex.checked) {
-					alert(hexToDec(input));
+					document.getElementById("resultDiv").innerHTML = hexToDec(input);
 				} else {
 					alert("Is your initial value binary or hexadecimal?");
 				}	
@@ -108,9 +108,7 @@
 		</button>
 
 
-		<div class="result">
-		
-		</div> 
+		<div id="resultDiv"></div> 
 
 		
 	</div>
