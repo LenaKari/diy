@@ -28,7 +28,7 @@ div {
 }
 
 
-.result {
+#resultDiv {
 	background-color: #ffffff ;
 	width: 100px ;
 	height: 20px ;
