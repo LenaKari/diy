@@ -61,12 +61,11 @@
 					return(0);
 				}
 			} else {
-				return("This part isn't working");
-//				var lastDigit = input.slice(input.length - 1, input.length);
-//				var valueLastDigit = binToDec(lastDigit);
-//				var head = input.slice(0, input.length - 1);
-//				var valueHead = binToDec(head);
-//				alert((2 * valueHead) + valueLastDigit);
+				var lastDigit = input.slice(input.length - 1, input.length);
+				var valueLastDigit = binToDec(lastDigit);
+				var head = input.slice(0, input.length - 1);
+				var valueHead = binToDec(head);
+				return((2 * valueHead) + valueLastDigit);
 			}
 		}
 
